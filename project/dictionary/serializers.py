@@ -1,9 +1,13 @@
 # dictionary/serializers.py
 
 from rest_framework import serializers
-from .models import Word
+from .models import WordOfTheDay
 
-class WordSerializer(serializers.ModelSerializer):
+# serializers.py
+from rest_framework import serializers
+from .models import WordOfTheDay
+
+class WordOfTheDaySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Word
-        fields = ['word']
+        model = WordOfTheDay
+        fields = ['id', 'word', 'definition', 'date']
